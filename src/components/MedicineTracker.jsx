@@ -69,6 +69,15 @@ const MedicineTracker = () => {
     }
   };
 
+  const handleClearCheckboxes = () => {
+    if (window.confirm("Are you sure you want to clear the checkboxes?")) {
+      localStorage.setItem("medicineTrackerData", JSON.stringify({ medicineName }));
+      setIsCheckedDays(Array.from({ length: 7 }, () => [false, false]));
+      window.location.reload();
+      window.alert("Boxes have been reset");
+    }
+  };
+
   return (
     <Container alignItems="center" maxWidth="md">
       <Typography
@@ -84,16 +93,29 @@ const MedicineTracker = () => {
       <Container>
         <Box align="center">
           <form onSubmit={handleMedicineNameSubmit}>
-            <TextField variant="outlined" defaultValue="First Medicine" onChange={handleMedicineNameChange} />
+            <TextField
+              variant="outlined"
+              placeholder="First Medicine"
+              onChange={handleMedicineNameChange}
+              sx={{ minWidth: "300px", marginBottom: "8px" }}
+            />
           </form>
         </Box>
         <Box align="center">
           <form onSubmit={handleSecondMedicineNameSubmit}>
-            <TextField variant="outlined" defaultValue="Second Medicine" onChange={handleSecondMedicineNameChange} />
+            <TextField
+              variant="outlined"
+              placeholder="Second Medicine"
+              onChange={handleSecondMedicineNameChange}
+              sx={{ minWidth: "300px" }}
+            />
           </form>
         </Box>
         <Box align="center">
-          <Button variant="contained" onClick={handleClearButtonClick} sx={{ marginTop: "10px" }}>
+          <Button variant="contained" onClick={handleClearCheckboxes} sx={{ minWidth: "200px", marginTop: "10px" }}>
+            Clear Checkboxes
+          </Button>
+          <Button variant="contained" onClick={handleClearButtonClick} sx={{ minWidth: "200px", marginTop: "10px" }}>
             Clear Log
           </Button>
         </Box>
