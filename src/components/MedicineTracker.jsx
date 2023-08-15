@@ -150,22 +150,24 @@ const MedicineTracker = () => {
                     </Typography>
                   />
                 </Box>
-                <Box>
-                  <FormControlLabel
-                    control={
-                      <Checkbox
-                        checked={isCheckedDays[index][1]}
-                        onChange={(e) => handleCheckboxDaysChange(e, index, 1)}
-                        sx={{ transform: "scale(1.5)", marginLeft: "8px" }}
-                      />
-                    }
-                    label={
-                      <Typography sx={{ fontSize: "1.3rem", fontFamily: "Wix Madefor Text", fontWeight: "400" }}>
-                        {secondMedicineName}
-                      </Typography>
-                    }
-                  />
-                </Box>
+                {secondMedicineName && (
+                  <Box>
+                    <FormControlLabel
+                      control={
+                        <Checkbox
+                          checked={isCheckedDays[index][1]}
+                          onChange={(e) => handleCheckboxDaysChange(e, index, 1)}
+                          sx={{ transform: "scale(1.5)", marginLeft: "8px" }}
+                        />
+                      }
+                      label={
+                        <Typography sx={{ fontSize: "1.3rem", fontFamily: "Wix Madefor Text", fontWeight: "400" }}>
+                          {secondMedicineName}
+                        </Typography>
+                      }
+                    />
+                  </Box>
+                )}
               </Grid>
             </Box>
           ))}
