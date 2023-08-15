@@ -95,6 +95,7 @@ const MedicineTracker = () => {
           <form onSubmit={handleMedicineNameSubmit}>
             <TextField
               variant="outlined"
+              autoComplete="off"
               placeholder="First Medicine"
               onChange={handleMedicineNameChange}
               sx={{ minWidth: "300px", marginBottom: "8px" }}
@@ -105,6 +106,7 @@ const MedicineTracker = () => {
           <form onSubmit={handleSecondMedicineNameSubmit}>
             <TextField
               variant="outlined"
+              autoComplete="off"
               placeholder="Second Medicine"
               onChange={handleSecondMedicineNameChange}
               sx={{ minWidth: "300px" }}
