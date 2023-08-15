@@ -111,6 +111,22 @@ const MedicineTracker = () => {
             />
           </form>
         </Box>
+        <Box align="center">
+          <Button
+            variant="contained"
+            onClick={handleClearCheckboxes}
+            sx={{ minWidth: "200px", marginTop: "10px", marginRight: "5px" }}
+          >
+            Clear Checkboxes
+          </Button>
+          <Button
+            variant="contained"
+            onClick={handleClearButtonClick}
+            sx={{ minWidth: "200px", marginTop: "10px", marginRight: "5px" }}
+          >
+            Clear Log
+          </Button>
+        </Box>
         <Paper elevation={3} sx={{ backgroundColor: "#F1F6F9" }}>
           {[...Array(7)].map((_, index) => (
             <Box key={index} sx={{ margin: "8px" }}>
@@ -164,14 +180,6 @@ const MedicineTracker = () => {
             </Box>
           ))}
         </Paper>
-        <Box align="center" marginBottom="100px" sx={{ display: "flex", flexDirection: "column" }}>
-          <Button variant="contained" onClick={handleClearCheckboxes} sx={{ minWidth: "200px", marginTop: "50px" }}>
-            Clear Checkboxes
-          </Button>
-          <Button variant="contained" onClick={handleClearButtonClick} sx={{ minWidth: "200px", marginTop: "10px" }}>
-            Clear Everything
-          </Button>
-        </Box>
       </Container>
     </Container>
   );
