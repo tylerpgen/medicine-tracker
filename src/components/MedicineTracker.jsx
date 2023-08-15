@@ -112,10 +112,18 @@ const MedicineTracker = () => {
           </form>
         </Box>
         <Box align="center">
-          <Button variant="contained" onClick={handleClearCheckboxes} sx={{ minWidth: "200px", marginTop: "10px" }}>
+          <Button
+            variant="contained"
+            onClick={handleClearCheckboxes}
+            sx={{ minWidth: "200px", marginTop: "10px", marginRight: "5px" }}
+          >
             Clear Checkboxes
           </Button>
-          <Button variant="contained" onClick={handleClearButtonClick} sx={{ minWidth: "200px", marginTop: "10px" }}>
+          <Button
+            variant="contained"
+            onClick={handleClearButtonClick}
+            sx={{ minWidth: "200px", marginTop: "10px", marginRight: "5px" }}
+          >
             Clear Log
           </Button>
         </Box>
